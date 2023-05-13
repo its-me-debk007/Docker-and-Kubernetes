@@ -11,7 +11,8 @@ services:
       - db:/var/lib/postgresql/data
     restart: always
     environment:
-      POSTGRES_PASSWORD: 12345
+      - POSTGRES_PASSWORD=12345
+      - POSTGRES_DB=docker_and_kubernetes
 
   server:
     build: .
