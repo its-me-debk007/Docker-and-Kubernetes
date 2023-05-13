@@ -15,6 +15,7 @@ services:
 
   server:
     build: .
+    image: go-server
     container_name: server
     ports:
       - "3000:3000"
