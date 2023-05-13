@@ -1,0 +1,25 @@
+version: "3.9"
+
+services:
+
+  database:
+    image: postgres:alpine
+    container_name: postgres
+    ports:
+      - "5432:5432"
+    volumes:
+      - db:/var/lib/postgresql/data
+    restart: always
+    environment:
+      POSTGRES_PASSWORD: 12345
+
+  server:
+    build: .
+    container_name: server
+    ports:
+      - "3000:3000"
+    depends_on:
+      - database
+
+volumes:
+  db:
