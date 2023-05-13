@@ -2,14 +2,13 @@ package main
 
 import (
 	"github.com/gin-gonic/gin"
-	"github.com/its-me-debk007/Docker-and-Kubernetes/database"
 	"log"
 	"net/http"
 	"os"
 )
 
 func main() {
-	database.ConnectDatabase()
+	//database.ConnectDatabase()
 
 	app := gin.Default()
 	app.Use(gin.Recovery())
